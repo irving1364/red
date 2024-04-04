@@ -83,31 +83,25 @@ const Navbar = ({ navDark, insurance, classOption }) => {
           <div className="clearfix"></div>
           <div className="collapse navbar-collapse justify-content-center">
             <ul className="nav col-12 col-md-auto justify-content-center main-menu">
-              <li className="nav-item ">
-                <a
-                  className="nav-link "
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Inicio
-                </a>
-                
+             
+              <li>
+                <Link href="/">
+                  <a className="nav-link">Inicio</a>
+                </Link>
               </li>
               <li>
-                <Link href="about-us">
+                <Link href="/conocenos">
                   <a className="nav-link">Conocenos</a>
                 </Link>
               </li>
               <li>
-                <Link href="services">
+                <Link href="/blogs">
                   <a className="nav-link">Blog</a>
                 </Link>
               </li>
 
               <li>
-                <Link href="pricing">
+                <Link href="/contacto">
                   <a className="nav-link">Contactanos</a>
                 </Link>
               </li>

@@ -15,30 +15,25 @@ const OffCanvasMenu = () => {
   return (
     <div className="offcanvas-body">
       <ul className="nav col-12 col-md-auto justify-content-center main-menu">
-        <li className="nav-item dropdown">
-          <a
-            className="nav-link dropdown-toggle d-flex justify-content-between"
-            href="#"
-            role="button"
-            aria-expanded="false"
-          >
-            Inicio
-          </a>
-          
+       
+        <li data-bs-dismiss="offcanvas" aria-label="Close">
+          <Link href="/">
+            <a className="nav-link">Inicio</a>
+          </Link>
         </li>
         <li data-bs-dismiss="offcanvas" aria-label="Close">
-          <Link href="/about-us">
+          <Link href="/conocenos">
             <a className="nav-link">Conocenos</a>
           </Link>
         </li>
         <li data-bs-dismiss="offcanvas" aria-label="Close">
-          <Link href="/services">
+          <Link href="/blogs">
             <a className="nav-link">Blog</a>
           </Link>
         </li>
 
         <li data-bs-dismiss="offcanvas" aria-label="Close">
-          <Link href="/pricing">
+          <Link href="contacto">
             <a className="nav-link">Contáctanos</a>
           </Link>
         </li>
