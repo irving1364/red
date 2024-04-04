@@ -13,17 +13,16 @@ const ContactForm = () => {
         <div className="row justify-content-lg-between align-items-center">
           <div className="col-lg-6 col-md-8">
             <div className="section-heading">
-              <h2>Talk to Our Sales & Marketing Department Team</h2>
+              <h2>Hable con nuestro equipo del departamento de Atención a la victima</h2>
               <p>
-                Collaboratively promote client-focused convergence vis-a-vis
-                customer directed alignments via standardized infrastructures.
+                Promover colaborativamente la convergencia centrada en la Victima frente a frente.
               </p>
             </div>
-            <form action="#" className="register-form">
+            <form action="" className="register-form">
               <div className="row">
                 <div className="col-sm-6">
                   <label htmlFor="firstName" className="mb-1">
-                    First name <span className="text-danger">*</span>
+                    Nombres <span className="text-danger">*</span>
                   </label>
                   <div className="input-group mb-3">
                     <input
@@ -31,28 +30,28 @@ const ContactForm = () => {
                       className="form-control"
                       id="firstName"
                       required
-                      placeholder="First name"
+                      placeholder="Nombres"
                       aria-label="First name"
                     />
                   </div>
                 </div>
                 <div className="col-sm-6 ">
                   <label htmlFor="lastName" className="mb-1">
-                    Last name
+                    Apellidos
                   </label>
                   <div className="input-group mb-3">
                     <input
                       type="text"
                       className="form-control"
                       id="lastName"
-                      placeholder="Last name"
+                      placeholder="Apellidos"
                       aria-label="Last name"
                     />
                   </div>
                 </div>
                 <div className="col-sm-6">
                   <label htmlFor="phone" className="mb-1">
-                    Phone <span className="text-danger">*</span>
+                    Teléfono <span className="text-danger">*</span>
                   </label>
                   <div className="input-group mb-3">
                     <input
@@ -60,14 +59,14 @@ const ContactForm = () => {
                       className="form-control"
                       id="phone"
                       required
-                      placeholder="Phone"
+                      placeholder="Teléfono"
                       aria-label="Phone"
                     />
                   </div>
                 </div>
                 <div className="col-sm-6">
                   <label htmlFor="email" className="mb-1">
-                    Email<span className="text-danger">*</span>
+                    Correo<span className="text-danger">*</span>
                   </label>
                   <div className="input-group mb-3">
                     <input
@@ -75,28 +74,28 @@ const ContactForm = () => {
                       className="form-control"
                       id="email"
                       required
-                      placeholder="Email"
+                      placeholder="Correo"
                       aria-label="Email"
                     />
                   </div>
                 </div>
                 <div className="col-12">
                   <label htmlFor="yourMessage" className="mb-1">
-                    Message <span className="text-danger">*</span>
+                    Mensaje <span className="text-danger">*</span>
                   </label>
                   <div className="input-group mb-3">
                     <textarea
                       className="form-control"
                       id="yourMessage"
                       required
-                      placeholder="How can we help you?"
+                      placeholder="Como podemos ayudarte?"
                       style={{ height: '120px' }}
                     ></textarea>
                   </div>
                 </div>
               </div>
-              <button type="submit" className="btn btn-primary mt-4">
-                Get in Touch
+              <button type="button" className="btn btn-primary mt-4">
+                 Ponerse en contacto
               </button>
             </form>
           </div>

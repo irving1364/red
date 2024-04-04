@@ -16,18 +16,18 @@ const ContactCard = () => {
                 <BsFillChatSquareTextFill />
               </span>
               <div className="contact-promo-info mb-4">
-                <h5>Chat with us</h5>
+                <h5>Chat con nosotros</h5>
                 <p>
-                  We have got live Social Experts waiting to help you{' '}
-                  <strong>monday to friday</strong> from
-                  <strong>9am to 5pm EST.</strong>
+                 Tenemos expertos sociales en vivo esperando para ayudarte de.{' '}
+                  <strong>lunes a viernes</strong> de
+                  <strong>9am a 5pm.</strong>
                 </p>
               </div>
               <a
                 href="mailto:hellothemetags@gmail.com"
                 className="btn btn-link mt-auto"
               >
-                Chat with us
+                Chat con nosotros
               </a>
             </div>
           </div>
@@ -37,18 +37,19 @@ const ContactCard = () => {
                 <BsFillEnvelopeFill />
               </span>
               <div className="contact-promo-info mb-4">
-                <h5>Email Us</h5>
+                <h5>Envíanos un correo electrónico</h5>
                 <p>
-                  Simple drop us an email at{' '}
-                  <strong>hellothemetags@gmail.com</strong>
-                  and you will receive a reply within 24 hours
+
+                  Simplemente envíenos un correo {' '}
+                  <strong>irving1364@gmail.com</strong>
+                  y recibirá una respuesta dentro de las 24 horas.
                 </p>
               </div>
               <a
-                href="mailto:hellothemetags@gmail.com"
+                href="mailto:irving1364@gmail.com"
                 className="btn btn-primary mt-auto"
               >
-                Email Us
+                Envíanos un correo 
               </a>
             </div>
           </div>
@@ -58,15 +59,16 @@ const ContactCard = () => {
                 <BsTelephoneInbound />
               </span>
               <div className="contact-promo-info mb-4">
-                <h5>Give us a call</h5>
+                <h5>Llamanos</h5>
                 <p>
-                  Give us a ring.Our Experts are standing by{' '}
-                  <strong>monday to friday</strong> from
-                  <strong>9am to 5pm EST.</strong>
+                  
+                  Llámenos. Nuestros expertos están disponibles de{' '}
+                  <strong>lunes a viernes</strong> de
+                  <strong> a.m. a 5 p.m.</strong>
                 </p>
               </div>
               <a href="tel:00-976-561-008" className="btn btn-link mt-auto">
-                00-976-561-008
+                0412 573 5972
               </a>
             </div>
           </div>
