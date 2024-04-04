@@ -11,9 +11,9 @@ const Blogs = () => {
     <Layout title="Blog" desc="This is blog page">
       <Navbar />
       <PageHeader
-        title="Our Latest News and Blogs"
-        desc="Completely integrate equity invested partnerships without revolutionary systems. Monotonectally network pandemic e-services via bricks-and-clicks information."
-        blogtags
+        title="Nuestras últimas noticias y blogs"
+        desc="Este al dia con todas nuestra publicaciones de su interes"
+        
       />
       <BlogFeature />
       <Footer />
