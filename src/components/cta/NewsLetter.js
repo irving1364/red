@@ -17,12 +17,11 @@ const NewsLetter = () => {
                 <div className="subscribe-info-wrap text-center position-relative z-2">
                   <div className="section-heading">
                     <h4 className="h5 text-warning">
-                      For Latest News &amp; Update
+                    Para las últimas noticias y actualizaciones
                     </h4>
-                    <h2>Want Receive the Best SAAS Insights? Subscribe Now!</h2>
+                    <h2>¿Quiere recibir Avisos Importantes? ¡Suscríbase ahora!</h2>
                     <p>
-                      We can help you to create your dream website for better
-                      business revenue.
+                      Estamos para ayudarte y apoyarte, mantente conectado con nosotros.
                     </p>
                   </div>
                   <div className="form-block-banner mw-60 m-auto mt-5">
@@ -36,13 +35,13 @@ const NewsLetter = () => {
                         className="form-control me-2"
                         name="Email"
                         data-name="Email"
-                        placeholder="Enter your email"
+                        placeholder="Ingresa tu correo"
                         id="Email2"
                         required=""
                       />
                       <input
                         type="button"
-                        value="Join!"
+                        value="Unete!"
                         data-wait="Please wait..."
                         className="btn btn-primary"
                       />
@@ -54,7 +53,7 @@ const NewsLetter = () => {
                         <i className="fad text-primary me-2">
                           <RiRecordCircleFill />
                         </i>
-                        Don’t worry we won’t send you spam
+                        No te preocupes, no te enviaremos spam
                       </span>
                     </li>
                   </ul>

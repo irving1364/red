@@ -10,17 +10,18 @@ const ProfileCard = () => {
       <Image
         width={120}
         height={120}
-        src="/team/team-2.jpg"
+        src="/logoColor.png"
         alt="author"
         className="img-fluid shadow-sm rounded-circle"
       />
       <div className="author-info my-4">
-        <h5 className="mb-0">Elena Mou</h5>
-        <span className="small">Head of Designer</span>
+        <h5 className="mb-0">Red de Abusos Eclesiasticos de Venezuela</h5>
+        <span className="small"></span>
       </div>
       <p>
-        Uniquely communicate open-source technology after value-added ideas.
-        Professionally engage efficient channels without B2C functionalities.
+      Somos una red, sin fines de lucro, de venezolanos que hemos 
+      sufrido abuso sexual, unidos para concientizar a la sociedad 
+      de la realidad de las victimas de abuso.
       </p>
       <ul className="list-unstyled author-social-list list-inline mt-3 mb-0">
         <li className="list-inline-item">

@@ -6,7 +6,33 @@ import Image from 'next/image';
 import SectionTitle from '../common/SectionTitle';
 import { blogFeatureData } from '../../utils/data';
 
+import { useEffect, useState } from "react";
+
 const LatestBlog = () => {
+
+  const [allBlog, setBlogHome] = useState([]);
+  const [filtrados, setFiltrados] = useState([]);
+   
+  useEffect(() => {
+    obtenerDatos();
+    
+    
+  }, []);
+
+  const obtenerDatos = async () => {
+
+    
+    const data = await fetch("https://fadimet.com.pa/red//wp-json/wp/v2/posts");
+    const result = await data.json();
+    console.log(result)
+    setBlogHome(result)
+
+    let home = result.filter(blog => blog.acf.home == 'si');
+    setFiltrados(home)
+    console.log(home)
+  
+ }
+
   return (
     <section className="related-blog-list ptb-120 ">
       <div className="container">
@@ -19,62 +45,41 @@ const LatestBlog = () => {
           </div>
           <div className="col-lg-7 col-md-12">
             <div className="text-start text-lg-end mb-4 mb-lg-0 mb-xl-0">
-              <Link href="">
+              <Link href="/blogs">
                 <a className="btn btn-primary"> Ver todos los Articulos</a>
               </Link>
             </div>
           </div>
         </div>
         <div className="row">
-          {blogFeatureData.slice(0, 3).map((blog, i) => (
+
+       
+          {filtrados.map((blog, i) => (
+
+            
+
             <div key={i + 1} className="col-lg-4 col-md-6">
               <div className="single-article rounded-custom mb-4 mb-lg-0">
-                <Link href="">
+                <Link  href={`blog/${blog.title.rendered}`}>
                   <a className="article-img">
-                    <Image
-                      width={414}
-                      height={224}
-                      src={blog.image}
-                      alt="article"
-                    />
+                    
+                    <img
+                          src={blog.featured_media_src_url}
+                          width="40"
+                        />
                   </a>
                 </Link>
                 <div className="article-content p-4">
-                  <div className="article-category mb-4 d-block">
-                    <a
-                      href="#!"
-                      className={`d-inline-block text-dark badge ${blog.class}`}
-                    >
-                      {blog.type}
-                    </a>
-                  </div>
+                 
                   <Link href="/blog-single">
                     <a>
                       <h2 className="h5 article-title limit-2-line-text">
-                        {blog.header}
+                        {blog.title.rendered}
                       </h2>
                     </a>
                   </Link>
-                  <p className="limit-2-line-text">{blog.info}</p>
+                  
 
-                  <a href="#!">
-                    <div className="d-flex align-items-center pt-4">
-                      <div className="avatar">
-                        <img
-                          src={blog.profilePic}
-                          alt="avatar"
-                          width="40"
-                          className="img-fluid rounded-circle me-3"
-                        />
-                      </div>
-                      <div className="avatar-info">
-                        <h6 className="mb-0 avatar-name">{blog.author} </h6>
-                        <span className="small fw-medium text-muted">
-                          {blog.data}
-                        </span>
-                      </div>
-                    </div>
-                  </a>
                 </div>
               </div>
             </div>

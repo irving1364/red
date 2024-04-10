@@ -1,25 +1,45 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { blogFeatureData } from '../../utils/data';
 
 const BlogFeature = () => {
+  
+  const [allBlog, setBlogHome] = useState([]);
+   
+  useEffect(() => {
+    obtenerDatos();
+    
+    
+  }, []);
+
+  const obtenerDatos = async () => {
+
+    
+    const data = await fetch("https://fadimet.com.pa/red//wp-json/wp/v2/posts");
+    const result = await data.json();
+    console.log(result)
+    setBlogHome(result)
+
+  
+ }
+
   return (
     <section className="masonary-blog-section ptb-120">
       <div className="container">
         
         <div className="row">
-          {blogFeatureData.slice(0, 3).map((blog, i) => (
+          {allBlog.map((blog, i) => (
             <div key={i + 1} className="col-lg-4 col-md-6">
               <div className="single-article rounded-custom my-3">
                 <Link href="/blog-single">
                   <a className="article-img">
-                    <Image
+                    <img
                       width={414}
                       height={224}
-                      src={blog.image}
+                      src={blog.featured_media_src_url}
                       alt="article"
                     />
                   </a>
@@ -30,36 +50,18 @@ const BlogFeature = () => {
                       href="#!"
                       className={`d-inline-block text-dark badge ${blog.class}`}
                     >
-                      {blog.type}
+                      Articulo
                     </a>
                   </div>
-                  <Link href="/blog-single">
+                  <Link href={`blog/${blog.title.rendered}`}>
                     <a>
                       <h2 className="h5 article-title limit-2-line-text">
-                        {blog.header}
+                        {blog.title.rendered}
                       </h2>
                     </a>
                   </Link>
-                  <p className="limit-2-line-text">{blog.info}</p>
-
-                  <a href="#!">
-                    <div className="d-flex align-items-center pt-4">
-                      <div className="avatar">
-                        <img
-                          src={blog.profilePic}
-                          alt="avatar"
-                          width="40"
-                          className="img-fluid rounded-circle me-3"
-                        />
-                      </div>
-                      <div className="avatar-info">
-                        <h6 className="mb-0 avatar-name">{blog.author} </h6>
-                        <span className="small fw-medium text-muted">
-                          {blog.data}
-                        </span>
-                      </div>
-                    </div>
-                  </a>
+                  
+                  
                 </div>
               </div>
             </div>
