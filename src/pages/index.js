@@ -13,8 +13,30 @@ import FeatureImgContentOne from "@components/feature-img-content/FeatureImgCont
 import LatestBlog from "@components/blogs/LatestBlog";
 
 import Head from 'next/head';
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
+  const [allBlog, setBlogHome] = useState([]);
+   
+  useEffect(() => {
+    obtenerDatos();
+    
+  }, []);
+
+  const obtenerDatos = async () => {
+
+    
+    const data = await fetch("https://fadimet.com.pa/red//wp-json/wp/v2/posts");
+    const result = await data.json();
+    console.log(result)
+    setBlogHome(result)
+  
+ }
+
+
+
+
   return (
     <Layout>
 
