@@ -34,7 +34,7 @@ const BlogFeature = () => {
           {allBlog.map((blog, i) => (
             <div key={i + 1} className="col-lg-4 col-md-6">
               <div className="single-article rounded-custom my-3">
-                <Link href="/blog-single">
+                <Link href={`blog/${blog.title.rendered}`}>
                   <a className="article-img">
                     <img
                       width={414}
@@ -47,7 +47,7 @@ const BlogFeature = () => {
                 <div className="article-content p-4">
                   <div className="article-category mb-4 d-block">
                     <a
-                      href="#!"
+                     href={`blog/${blog.title.rendered}`}
                       className={`d-inline-block text-dark badge ${blog.class}`}
                     >
                       Articulo

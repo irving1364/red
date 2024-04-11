@@ -71,7 +71,7 @@ const LatestBlog = () => {
                 </Link>
                 <div className="article-content p-4">
                  
-                  <Link href="/blog-single">
+                  <Link href={`blog/${blog.title.rendered}`}>
                     <a>
                       <h2 className="h5 article-title limit-2-line-text">
                         {blog.title.rendered}

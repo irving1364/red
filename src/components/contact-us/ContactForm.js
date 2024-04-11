@@ -1,8 +1,42 @@
 import React from 'react';
 import Image from 'next/image';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 const ContactForm = () => {
+
+  
+  const { register, formState: { errors}, handleSubmit } = useForm();
+  const [mensaje, setMensaje] = useState([]);
+
+  const onSubmit = async (e) => {
+    console.log(e)
+
+    const form = new FormData();
+      form.append("your-name", e.nombre);
+      form.append("your-apellido", e.apellido);
+      form.append("tel-121", e.phone);
+      form.append("your-email",  e.correo);
+      form.append("your-message",  e.mensaje);
+    
+    var requestOptions = {
+      method: 'POST',
+      body: form,
+      redirect: 'follow'
+    };
+
+    fetch("https://fadimet.com.pa/red/index.php/wp-json/contact-form-7/v1/contact-forms/51/feedback", requestOptions)
+      .then(response => response.text())
+      .then(result =>  window.location.href = "/" )
+      .catch(error => console.log('error', error));
+
+     
+   }
+
+
   return (
+    <>
+
     <section
       className="contact-us-form pt-60 pb-120"
       style={{
@@ -18,7 +52,7 @@ const ContactForm = () => {
                 Promover colaborativamente la convergencia centrada en la Victima frente a frente.
               </p>
             </div>
-            <form action="" className="register-form">
+            <form onSubmit={handleSubmit(onSubmit)}  className="register-form">
               <div className="row">
                 <div className="col-sm-6">
                   <label htmlFor="firstName" className="mb-1">
@@ -28,7 +62,10 @@ const ContactForm = () => {
                     <input
                       type="text"
                       className="form-control"
-                      id="firstName"
+                      id="nombre" {...register('nombre', {
+                        required:true,
+                        maxLength:50
+                      })} 
                       required
                       placeholder="Nombres"
                       aria-label="First name"
@@ -43,7 +80,10 @@ const ContactForm = () => {
                     <input
                       type="text"
                       className="form-control"
-                      id="lastName"
+                      id="apellido" {...register('apellido', {
+                        required:true,
+                        maxLength:50
+                      })} 
                       placeholder="Apellidos"
                       aria-label="Last name"
                     />
@@ -57,7 +97,10 @@ const ContactForm = () => {
                     <input
                       type="text"
                       className="form-control"
-                      id="phone"
+                      id="phone" {...register('phone', {
+                        required:true,
+                        maxLength:50
+                      })}
                       required
                       placeholder="Teléfono"
                       aria-label="Phone"
@@ -72,7 +115,10 @@ const ContactForm = () => {
                     <input
                       type="email"
                       className="form-control"
-                      id="email"
+                      id="correo" {...register('correo', {
+                        required:true,
+                        maxLength:50
+                      })}
                       required
                       placeholder="Correo"
                       aria-label="Email"
@@ -86,7 +132,11 @@ const ContactForm = () => {
                   <div className="input-group mb-3">
                     <textarea
                       className="form-control"
-                      id="yourMessage"
+                      id="mensaje"
+                      {...register('mensaje', {
+                        required:true,
+                        maxLength:150
+                      })}
                       required
                       placeholder="Como podemos ayudarte?"
                       style={{ height: '120px' }}
@@ -94,10 +144,17 @@ const ContactForm = () => {
                   </div>
                 </div>
               </div>
-              <button type="button" className="btn btn-primary mt-4">
+              <button type="submit" className="btn btn-primary mt-4">
                  Ponerse en contacto
               </button>
             </form>
+
+            { !mensaje.message
+						? <></>
+						: <p>Se ha enviado el formulario, Gracias nos pondremos en contacto con usted</p> 
+					}
+           
+
           </div>
           <div className="col-lg-5 col-md-10">
             <div className="contact-us-img">
@@ -113,6 +170,7 @@ const ContactForm = () => {
         </div>
       </div>
     </section>
+   </>
   );
 };
 

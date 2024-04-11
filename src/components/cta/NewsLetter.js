@@ -29,18 +29,20 @@ const NewsLetter = () => {
                       id="email-form2"
                       name="email-form"
                       className="subscribe-form d-flex"
+                      method="post" 
+                      action="https://fadimet.com.pa/red/?na=s" 
                     >
                       <input
-                        type="email"
                         className="form-control me-2"
-                        name="Email"
                         data-name="Email"
                         placeholder="Ingresa tu correo"
-                        id="Email2"
                         required=""
+                        type="email" 
+                        name="ne" 
+                        id="tnp-1"
                       />
                       <input
-                        type="button"
+                        type="submit"
                         value="Unete!"
                         data-wait="Please wait..."
                         className="btn btn-primary"
