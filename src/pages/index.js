@@ -11,6 +11,7 @@ import WorkProcessOne from "@components/workprocess/WorkProcessOne";
 import HeroSectionOne from "@components/hero-section/HeroSectionOne";
 import FeatureImgContentOne from "@components/feature-img-content/FeatureImgContentOne";
 import LatestBlog from "@components/blogs/LatestBlog";
+import NewsLetter from '@components/cta/NewsLetter';
 
 import Head from 'next/head';
 import { useEffect, useState } from "react";
@@ -56,6 +57,11 @@ export default function Home() {
 
 
       <Navbar navDark />
+
+
+      
+     
+
       <HeroSectionOne />
       {/* 
         <FeatureOne />
@@ -67,6 +73,7 @@ export default function Home() {
       <WorkProcessOne />
       <FaqOne />
       <LatestBlog />
+      <NewsLetter />
       {/*
       <IntegrationOne />
       <SupportOne />
